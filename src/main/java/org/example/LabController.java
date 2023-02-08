@@ -12,8 +12,9 @@ public class LabController {
     AddressBookRepository addressBookRepository;
     BuddyInfoRepository buddyInfoRepository;
     @Autowired
-    public LabController(AddressBookRepository addressBookRepository) {
+    public LabController(AddressBookRepository addressBookRepository, BuddyInfoRepository buddyInfoRepository) {
         this.addressBookRepository = addressBookRepository;
+        this.buddyInfoRepository = buddyInfoRepository;
     }
 
     @GetMapping("/greeting")

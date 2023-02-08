@@ -19,6 +19,11 @@ public class BuddyInfo {
         this.number = p;
     }
 
+    public BuddyInfo(String n, String p) {
+        this.name = n;
+        this.number = p;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getId() {

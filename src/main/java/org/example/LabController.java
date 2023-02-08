@@ -17,7 +17,7 @@ public class LabController {
     }
 
     @GetMapping("/greeting")
-    public String addressBooks(@RequestParam("bookId") Long id, Model model) {
+    public String addressBooks(@RequestParam(value = "bookId", defaultValue = "Hello, World") Long id, Model model) {
         AddressBook addressBook = addressBookRepository.findAddressBookById(id);
         model.addAttribute("bookId", addressBook);
         return "greeting";

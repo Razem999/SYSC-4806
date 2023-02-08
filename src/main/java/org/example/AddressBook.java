@@ -25,6 +25,10 @@ public class AddressBook {
         this.bookName = n;
     }
 
+    public AddressBook(String n) {
+        this.bookName = n;
+    }
+
 
     public Long getId() {
         return this.id;

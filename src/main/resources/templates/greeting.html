@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Getting Started: Serving Web Content</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>AddressBooks</h1>
+<p th:text="'This is AddressBook: ' + ${bookId} + '!'" />
+<p th:text="'AddressBook ID: ' + ${bookId.getId()}" />
+<p th:each="Buddy : ${bookId.buddies}">
+  ID: <span th:text="${Buddy.getId()}"/>
+  Name: <span th:text="${Buddy.getName()}"/>
+  Number: <span th:text="${Buddy.getNumber()}"/>
+</p>
+</body>
+</html>

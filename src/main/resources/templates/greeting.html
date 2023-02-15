@@ -5,13 +5,29 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<h1>AddressBooks</h1>
-<p th:text="'This is AddressBook: ' + ${bookId} + '!'" />
-<p th:text="'AddressBook ID: ' + ${bookId.getId()}" />
-<p th:each="Buddy : ${bookId.buddies}">
-  ID: <span th:text="${Buddy.getId()}"/>
-  Name: <span th:text="${Buddy.getName()}"/>
-  Number: <span th:text="${Buddy.getNumber()}"/>
-</p>
+
+  <h1>AddressBook</h1>
+  <form action="#" th:action="@{/addressBook}" th:object="${addressBook}" method="post">
+    <p>Id: <input type="text" th:field="*{id}" /></p>
+    <p>BookName: <input type="text" th:field="*{bookName}"/></p>
+    <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+  </form>
+
+  <br>
+
+<!--  <h1>AddressBooks</h1>-->
+<!--  <p th:text="'This is AddressBook: ' + ${addressBooks} + '!'" />-->
+<!--  <p th:text="'AddressBook ID: ' + ${addressBooks.getId()}" />-->
+<!--  <p th:each="Buddy : ${addressBooks.buddies}">-->
+<!--    ID: <span th:text="${Buddy.getId()}"/>-->
+<!--    Name: <span th:text="${Buddy.getName()}"/>-->
+<!--    Number: <span th:text="${Buddy.getNumber()}"/>-->
+<!--  </p>-->
+
+<!--  <h1>Result</h1>-->
+<!--  <p th:text="'id: ' + ${greeting.id}" />-->
+<!--  <p th:text="'content: ' + ${greeting.content}" />-->
+<!--  <a href="/greeting">Submit another message</a>-->
+
 </body>
 </html>

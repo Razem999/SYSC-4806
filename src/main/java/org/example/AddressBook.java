@@ -50,6 +50,11 @@ public class AddressBook {
         buddies.add(bi);
     }
 
+    public void addBuddy(String name, String number) {
+        BuddyInfo buddyInfo = new BuddyInfo(name, number);
+        buddies.add(buddyInfo);
+    }
+
     public boolean removeBuddy(String n) {
         for(int i = 0; i < buddies.size(); i++) {
             if(buddies.get(i).getName().equals(n) || buddies.get(i).getNumber().equals(n)) {

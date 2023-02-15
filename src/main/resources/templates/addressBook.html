@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>AddressBooks</h1>
+<p th:text="'This is AddressBook: ' + ${addressBooks.bookName} + '!'" />
+<p th:text="'AddressBook ID: ' + ${addressBooks.id}" />
+
+<br>
+
+<h1>Buddy List</h1>
+<p th:each="Buddy : ${addressBooks.buddies}">
+    ID: <span th:text="${Buddy.getId()}"/>
+    Name: <span th:text="${Buddy.getName()}"/>
+    Number: <span th:text="${Buddy.getNumber()}"/>
+</p>
+
+<br>
+
+<h1>Add Buddies</h1>
+<form action="#" th:action="@{/addBuddy}" th:object="${buddyInfos}" method="post">
+    <p>BuddyName: <input type="text" th:field="*{name}"/></p>
+    <p>PhoneNumber: <input type="text" th:field="*{number}"/></p>
+    <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+</form>
+
+</body>
+</html>
